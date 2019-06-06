@@ -19,11 +19,12 @@ services:
     volumes:
       - /app/node_modules
       - ./server:/app
+      #Below: wait until postgres and redis are ready before starting this 
     depends_on: 
       - postgres
       - redis
     environment: 
-      - REDIS_HOST=redis
+      - REDIS_HOST=redis # left side of = has to match services: redis 
       - REDIS_PORT=6379
       - PGUSER=postgres
       - PGHOST=postgres

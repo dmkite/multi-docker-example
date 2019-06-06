@@ -95,8 +95,8 @@ In the repo, change directory to `client`, then build image
 The `-f` flag allows you to give a specific file to build from
 
 `docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image id>`
-
-Will use volumes such that the binaries will be used from the container, but the code will be used from the file system.
+^ instead of looking in the image, look at my working directory /app. Look at node modules inside myrunning container, but everythign else from my local directory 
+Will use volumes such that the binaries will be used from the container, but the code will be used from the file system. Node modules will always live in container, but you get your local changes.
 
 ## Docker Compose
 
